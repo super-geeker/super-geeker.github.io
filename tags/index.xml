@@ -6,9 +6,37 @@
     <description>Recent content in Tags on Super Geeker</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+    <lastBuildDate>Mon, 29 Jul 2019 14:50:02 +0000</lastBuildDate>
     
 	<atom:link href="https://super-geeker.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>blog</title>
+      <link>https://super-geeker.github.io/tags/blog/</link>
+      <pubDate>Mon, 29 Jul 2019 14:50:02 +0000</pubDate>
+      
+      <guid>https://super-geeker.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://super-geeker.github.io/tags/hugo/</link>
+      <pubDate>Mon, 29 Jul 2019 14:50:02 +0000</pubDate>
+      
+      <guid>https://super-geeker.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>termux</title>
+      <link>https://super-geeker.github.io/tags/termux/</link>
+      <pubDate>Mon, 29 Jul 2019 14:50:02 +0000</pubDate>
+      
+      <guid>https://super-geeker.github.io/tags/termux/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
