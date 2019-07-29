@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Super Geeker</title>
+    <link>https://super-geeker.github.io/</link>
+    <description>Recent content on Super Geeker</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 29 Jul 2019 09:22:55 +0000</lastBuildDate>
+    
+	<atom:link href="https://super-geeker.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>开通博客</title>
+      <link>https://super-geeker.github.io/post/first-blog/</link>
+      <pubDate>Mon, 29 Jul 2019 09:22:55 +0000</pubDate>
+      
+      <guid>https://super-geeker.github.io/post/first-blog/</guid>
+      <description>&lt;p&gt;我的个人博客今天正式开通了！&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>关于我</title>
+      <link>https://super-geeker.github.io/about/</link>
+      <pubDate>Mon, 29 Jul 2019 09:14:46 +0000</pubDate>
+      
+      <guid>https://super-geeker.github.io/about/</guid>
+      <description>吾爱有三：技术、街健、哲学</description>
+    </item>
+    
+  </channel>
+</rss>
