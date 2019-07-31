@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Geeker" /><meta name="description" content="本篇将带领大家使用Hugo轻松的搭建一个本地个人博客平台。" /><meta name="keywords" content="技术, 街健, 哲学" />
+<meta name="author" content="Geeker" /><meta name="description" content="使用Hugo搭建个人博客" /><meta name="keywords" content="hugo, termux, , blog, 教程" />
 
 
 
@@ -39,26 +39,26 @@
 
 
 <meta property="og:title" content="Hugo搭建个人博客 (一)" />
-<meta property="og:description" content="本篇将带领大家使用Hugo轻松的搭建一个本地个人博客平台。" />
+<meta property="og:description" content="使用Hugo搭建个人博客" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://super-geeker.github.io/post/termux-build-hugo-1/" />
 <meta property="article:published_time" content="2019-07-29T14:50:02&#43;00:00"/>
 <meta property="article:modified_time" content="2019-07-29T14:50:02&#43;00:00"/>
 
 <meta itemprop="name" content="Hugo搭建个人博客 (一)">
-<meta itemprop="description" content="本篇将带领大家使用Hugo轻松的搭建一个本地个人博客平台。">
+<meta itemprop="description" content="使用Hugo搭建个人博客">
 
 
 <meta itemprop="datePublished" content="2019-07-29T14:50:02&#43;00:00" />
 <meta itemprop="dateModified" content="2019-07-29T14:50:02&#43;00:00" />
-<meta itemprop="wordCount" content="2995">
+<meta itemprop="wordCount" content="3015">
 
 
 
 <meta itemprop="keywords" content="hugo,termux,blog," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hugo搭建个人博客 (一)"/>
-<meta name="twitter:description" content="本篇将带领大家使用Hugo轻松的搭建一个本地个人博客平台。"/>
+<meta name="twitter:description" content="使用Hugo搭建个人博客"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -132,8 +132,8 @@
         <div class="post-category">
             <a href="/categories/tutorial/"> tutorial </a>
             </div>
-          <span class="more-meta"> 约 2995 字 </span>
-          <span class="more-meta"> 预计阅读 6 分钟 </span>
+          <span class="more-meta"> 约 3015 字 </span>
+          <span class="more-meta"> 预计阅读 7 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -145,19 +145,19 @@
 <ul>
 <li>
 <ul>
-<li><a href="#简介">简介</a>
+<li><a href="#简介"><strong>简介</strong></a>
 <ul>
-<li><a href="#静态网站生成引擎">静态网站生成引擎</a></li>
-<li><a href="#termux">Termux</a></li>
+<li><a href="#静态网站生成引擎"><strong>静态网站生成引擎</strong></a></li>
+<li><a href="#termux"><strong>Termux</strong></a></li>
 </ul></li>
-<li><a href="#环境搭建">环境搭建</a>
+<li><a href="#环境搭建"><strong>环境搭建</strong></a>
 <ul>
-<li><a href="#安装hugo">安装Hugo</a></li>
-<li><a href="#创建网站">创建网站</a></li>
-<li><a href="#网站配置">网站配置</a></li>
-<li><a href="#创建博客">创建博客</a></li>
+<li><a href="#安装hugo"><strong>安装Hugo</strong></a></li>
+<li><a href="#创建网站"><strong>创建网站</strong></a></li>
+<li><a href="#网站配置"><strong>网站配置</strong></a></li>
+<li><a href="#创建博客"><strong>创建博客</strong></a></li>
 </ul></li>
-<li><a href="#小结">小结</a></li>
+<li><a href="#小结"><strong>小结</strong></a></li>
 </ul></li>
 </ul>
 </nav>
@@ -172,28 +172,28 @@
 
 <p>如今的博客平台各式各样，从博客园、CSDN到简书、知乎再到掘金、SegmentFault，一应俱全，有的属于专门的技术类博客平台，有的则属于综合类博客平台。当这些平台不足以满足人们可高度定制化或为更好的打造个人品牌等种种需求时，个人博客平台就开始流行了起来。比如搭建WordPress个人博客，奈何其复杂的环境安装配置及域名空间的购买等等一系列步骤吓退了一大批人。这时，静态网站生成引擎又应运而生。</p>
 
-<h2 id="简介">简介</h2>
+<h2 id="简介"><strong>简介</strong></h2>
 
-<h3 id="静态网站生成引擎">静态网站生成引擎</h3>
+<h3 id="静态网站生成引擎"><strong>静态网站生成引擎</strong></h3>
 
 <p>听到静态网站生成引擎，很多人可能会比较陌生，这里不要被名字吓到，说白了，它就是可以让我们轻松快速搭建个人博客的博客框架，免去像搭建一个WordPress博客平台的沉重，从而可以让我们回归创作本身。</p>
 
 <p>简单介绍一下目前最为流行的三款静态网站生成引擎：Hexo、Jekyll以及Hugo，它们分别基于Nodejs、Ruby、Go这几种语言编写。其中，Hugo属于新秀，它们之间的区别及特性这里就不再赘述，想进一步了解可以自行Google。技术的更新必然有它的优势，而优势通常可以体现在易用性、可扩展性、性能及应用场景中的一点或几点上。就我个人而言，我是一个乐衷于不断探索并学习前沿技术的人，因此，在经过这几方面的对比后我选择了新秀Hugo。</p>
 
-<h3 id="termux">Termux</h3>
+<h3 id="termux"><strong>Termux</strong></h3>
 
 <p>Termux是一个Android终端模拟器和Linux环境应用程序，不需要root和设置就可以直接工作。我跟Termux可谓相见恨晚，它的强大之处在于不仅可以说它是一个运行在手机上的操作系统，更可以将它打造为手机上的渗透神器，这其中的细节不在本文的讨论范围，想要深入了解的仍需自行Google。当然，在此之前，网络安全法的相关条文可能也需学习。</p>
 
 <p>言归正传，不管是在Termux还是在Linux亦或是其他OS上搭建Hugo，过程都大同小异，无非是安装命令的差异。在正式进入搭建之前，假定你已充分掌握Linux基本命令并已成功安装了Git及Vim，如果没有，你仍可继续参考下面步骤进行搭建，但要清楚的是，每个命令执行后都可能会出现各式各样的报错信息，你要做好可以有效处理这些问题的准备。OK，让我们开始吧！</p>
 
-<h2 id="环境搭建">环境搭建</h2>
+<h2 id="环境搭建"><strong>环境搭建</strong></h2>
 
 <p>打开终端，以下命令都需要在终端执行，务必利用好<code>ls</code>以及<code>pwd</code>命令清楚定位当前所在目录层级。</p>
 
-<h3 id="安装hugo">安装Hugo</h3>
+<h3 id="安装hugo"><strong>安装Hugo</strong></h3>
 
 <ul>
-<li><p>安装Hugo</p>
+<li><p><strong>安装Hugo</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -204,7 +204,7 @@
 </div>
 <p>安装完成，通过查看是否输出版本信息来判断是否安装成功。</p></li>
 
-<li><p>检查版本</p>
+<li><p><strong>检查版本</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -216,10 +216,10 @@
 <p>输出版本信息，则表示安装成功。</p></li>
 </ul>
 
-<h3 id="创建网站">创建网站</h3>
+<h3 id="创建网站"><strong>创建网站</strong></h3>
 
 <ul>
-<li><p>新建site</p>
+<li><p><strong>新建site</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -230,7 +230,7 @@
 </div>
 <p>blog为项目名称，可以自定义，执行成功，会提示需要下载theme。</p></li>
 
-<li><p>下载theme</p>
+<li><p><strong>下载theme</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -247,7 +247,7 @@ git clone https://github.com/josephhutch/aether</pre></td></tr></table>
 如果提示Git没有安装，先输入<code>pkg install git</code>安装再重新下载。<br />
 下载成功后在themes目录下<code>ls</code>会看到aether目录。</p></li>
 
-<li><p>配置theme</p>
+<li><p><strong>配置theme</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -260,7 +260,7 @@ git clone https://github.com/josephhutch/aether</pre></td></tr></table>
 <code>exampleSite</code>中的config文件是示例配置，通常包含一个主题最通用的配置模板，可以结合文档，查看所有可供选择的配置项。<br />
 最后，启动Hugo服务器查看效果。</p></li>
 
-<li><p>启动Hugo服务器</p>
+<li><p><strong>启动Hugo服务器</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -276,10 +276,10 @@ hugo server</pre></td></tr></table>
 到这一步，仅仅是一个开始，先不要急着更换主题，后面才是主题参数的配置及更加深入的讲解。</p></li>
 </ul>
 
-<h3 id="网站配置">网站配置</h3>
+<h3 id="网站配置"><strong>网站配置</strong></h3>
 
 <ul>
-<li><p>打开config.toml</p>
+<li><p><strong>打开config.toml</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -291,7 +291,7 @@ hugo server</pre></td></tr></table>
 <p>如果提示Vim没有安装，先输入<code>pkg install vim</code>安装后再重新打开。<br />
 这里强烈建议学习Vim基本操作，简单介绍几种基本操作，以保证可以正常进行。<code>a</code>或<code>i</code>进入插入模式，<code>esc</code>进入正常模式，正常模式下输入<code>:</code>进入命令模式，命令模式下输入<code>wq</code>保存并退出。</p></li>
 
-<li><p>修改config.toml参数</p>
+<li><p><strong>修改config.toml参数</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -305,10 +305,10 @@ hugo server</pre></td></tr></table>
 <code>author</code>和<code>description</code>分别是作者和描述，可以分别设置为自己的名字及对网站的描述。</p></li>
 </ul>
 
-<h3 id="创建博客">创建博客</h3>
+<h3 id="创建博客"><strong>创建博客</strong></h3>
 
 <ul>
-<li><p>配置文章模板</p>
+<li><p><strong>配置文章模板</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -321,7 +321,7 @@ hugo server</pre></td></tr></table>
 替换后会在项目根目录下的<code>archetypes</code>目录下会看到<code>default.md</code>和<code>post.md</code>两个模板文件。<br />
 在通过Hugo来<code>new</code>新博客的时候，会自动应用该模板文件。</p></li>
 
-<li><p>新建博客</p>
+<li><p><strong>新建博客</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -335,7 +335,7 @@ hugo server</pre></td></tr></table>
 如果模板中没有与之对应的同名目录名，则会自动应用模板目录中的<code>default.md</code>模板。<br />
 模板文件因主题而异，不同主题模板应用方式可能会有所差异。</p></li>
 
-<li><p>新建关于</p>
+<li><p><strong>新建关于</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -346,7 +346,7 @@ hugo server</pre></td></tr></table>
 </div>
 <p>该命令与上述新建博客命令类似，执行成功会在项目根目录下的<code>content</code>目录下自动创建<code>about</code>目录，<code>about</code>目录下则自动生成了<code>about.md</code>文件，需要注意的是，<code>archetypes</code>中并没有与<code>about</code>目录所对应的模板文件，所以会自动应用<code>default.md</code>模板文件。由于<code>about.md</code>需要显示在导航菜单，因此要将<code>displayInMenu</code>设置为<code>true</code>，将<code>displayInList</code>设置为<code>false</code></p></li>
 
-<li><p>运行查看</p>
+<li><p><strong>运行查看</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -357,7 +357,7 @@ hugo server</pre></td></tr></table>
 </div>
 <p>与前面开启服务器的方式有所不同，这里加了<code>-D</code>参数，是因为博客中<code>draft</code>属性默认为true，即为草稿文件，不加<code>-D</code>，博客是无法显示的。如果不想加该参数，将博客中的<code>draft</code>属性设为false或者删除即可。</p></li>
 
-<li><p>Front Matter</p>
+<li><p><strong>Front Matter</strong></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><span class="lnt">1
@@ -387,15 +387,29 @@ resources:设置博客列表图片等信息</pre></td></tr></table>
 <code>categories</code>中设置的分类会显示在导航菜单上。</p></li>
 </ul>
 
-<h2 id="小结">小结</h2>
+<h2 id="小结"><strong>小结</strong></h2>
 
 <p>至此，一个可以运行在本地的个人博客就这样搭建完成了。这时，你可以进行博客的增删改查以及可以尝试给自己的网站应用其他主题等等。</p>
 
-<p>然而，想将自己付诸心血写好的博客分享给大家该怎么办呢？即如何将博客部署到线上，我会继续在下一篇博客中详尽介绍！其实本想一口气全部写完，奈何光是写到这就熬了我不知多少个黑夜白天，所以索性就分开来写了。</p>
+<p>然而，想将自己付诸心血写好的博客分享给大家该怎么办呢？即如何将博客部署到线上，在下一篇 <a href="https://super-geeker.github.io/post/termux-build-hugo-2">Hugo搭建个人博客 (二)</a> 中详尽介绍了博客完整的部署及管理流程！其实本想一口气全部写完，奈何光是写到这就熬了我不知多少个黑夜白天，所以索性就分开来写了。</p>
 
     </div>
 
-    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Geeker</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-07-29
+        
+    </span>
+  </p>
+  
+  
+</div>
 <div class="post-reward">
   <input type="checkbox" name="reward" id="reward" hidden />
   <label class="reward-button" for="reward">赞赏支持</label>
@@ -417,7 +431,11 @@ resources:设置博客列表图片等信息</pre></td></tr></table>
           <a href="/tags/blog/">blog</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/termux-build-hugo-2/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Hugo搭建个人博客 (二)</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         <a class="next" href="/post/first-blog/">
             <span class="next-text nav-default">开通博客</span>
             <span class="next-text nav-mobile">下一篇</span>

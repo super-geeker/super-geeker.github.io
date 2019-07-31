@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Hugo搭建个人博客 (二) - Super Geeker</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Geeker" /><meta name="description" content="Hugo&#43;GitHub Pages，完整的个人博客线上部署及管理流程" /><meta name="keywords" content="hugo, termux, blog, 教程, github pages" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://super-geeker.github.io/post/termux-build-hugo-2/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Hugo搭建个人博客 (二)" />
+<meta property="og:description" content="Hugo&#43;GitHub Pages，完整的个人博客线上部署及管理流程" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://super-geeker.github.io/post/termux-build-hugo-2/" />
+<meta property="article:published_time" content="2019-07-30T07:41:59&#43;00:00"/>
+<meta property="article:modified_time" content="2019-07-30T07:41:59&#43;00:00"/>
+
+<meta itemprop="name" content="Hugo搭建个人博客 (二)">
+<meta itemprop="description" content="Hugo&#43;GitHub Pages，完整的个人博客线上部署及管理流程">
+
+
+<meta itemprop="datePublished" content="2019-07-30T07:41:59&#43;00:00" />
+<meta itemprop="dateModified" content="2019-07-30T07:41:59&#43;00:00" />
+<meta itemprop="wordCount" content="1771">
+
+
+
+<meta itemprop="keywords" content="hugo,termux,blog," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hugo搭建个人博客 (二)"/>
+<meta name="twitter:description" content="Hugo&#43;GitHub Pages，完整的个人博客线上部署及管理流程"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">学而不思则罔</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">学而不思则罔</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Hugo搭建个人博客 (二)</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-07-30 </span>
+        <div class="post-category">
+            <a href="/categories/tutorial/"> tutorial </a>
+            </div>
+          <span class="more-meta"> 约 1771 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#简介"><strong>简介</strong></a>
+<ul>
+<li><a href="#github"><strong>GitHub</strong></a></li>
+<li><a href="#github-pages"><strong>GitHub Pages</strong></a></li>
+</ul></li>
+<li><a href="#部署"><strong>部署</strong></a>
+<ul>
+<li><a href="#注册账号"><strong>注册账号</strong></a></li>
+<li><a href="#新建仓库"><strong>新建仓库</strong></a></li>
+<li><a href="#clone到本地"><strong>clone到本地</strong></a></li>
+<li><a href="#合并"><strong>合并</strong></a></li>
+<li><a href="#重新添加theme"><strong>重新添加theme</strong></a></li>
+<li><a href="#配置主题"><strong>配置主题</strong></a></li>
+<li><a href="#测试运行"><strong>测试运行</strong></a></li>
+<li><a href="#生成public目录"><strong>生成public目录</strong></a></li>
+<li><a href="#部署public"><strong>部署public</strong></a></li>
+<li><a href="#public作为submodule"><strong>public作为submodule</strong></a></li>
+<li><a href="#添加脚本"><strong>添加脚本</strong></a></li>
+<li><a href="#提交整个博客项目"><strong>提交整个博客项目</strong></a></li>
+</ul></li>
+<li><a href="#小结"><strong>小结</strong></a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<blockquote>
+<p>版权声明：本文为作者原创文章，转载请务必在文章开头醒目位置以超链接的形式注明原文链接。格式形如：<em>原文转载自：<a href="https://super-geeker.github.io/post/termux-build-hugo-2/">https://super-geeker.github.io/post/termux-build-hugo-2/</a></em></p>
+</blockquote>
+
+<p>在上一篇 <a href="https://super-geeker.github.io/post/termux-build-hugo-2">Hugo搭建个人博客 (一)</a> 中，主要讲了如何使用Hugo搭建一个本地的个人博客，但这并不能达到我们预期的目标。因此，在这一篇我将继续教大家掌握个人博客完整的线上部署及管理流程。</p>
+
+<h2 id="简介"><strong>简介</strong></h2>
+
+<h3 id="github"><strong>GitHub</strong></h3>
+
+<p>GitHub是一个面向开源及私有软件项目的托管平台，只支持Git作为唯一的版本库格式进行托管。其长期以来，一直推动着技术的快速发展。</p>
+
+<h3 id="github-pages"><strong>GitHub Pages</strong></h3>
+
+<p>GitHub Pages是GitHub提供的一项Pages服务，我们这里要讲的线上部署方式就是依托Pages的静态网页托管服务来托管我们的博客。最主要的是，免费！</p>
+
+<h2 id="部署"><strong>部署</strong></h2>
+
+<h3 id="注册账号"><strong>注册账号</strong></h3>
+
+<p>首先我们需要在 <a href="https://github.com">GitHub</a> 上注册一个账号，GitHub注册时的username是部署完博客访问地址的一部分，所以尽量起一个合适的名称。</p>
+
+<h3 id="新建仓库"><strong>新建仓库</strong></h3>
+
+<p>这里我们需要创建两个仓库，一个用于托管我们整个博客项目，仓库名称任取，例如：<code>blog</code>，另一个则用来部署我们的博客，这里需要注意的是，该仓库名称需要命名为：<code>username.github.io</code>，其中，username需替换为自己注册填写的username。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">GitHub注册的username为demo
+仓库名需命名为：demo.github.io
+部署完博客主页访问地址为：demo.github.io</pre></td></tr></table>
+</div>
+</div>
+<h3 id="clone到本地"><strong>clone到本地</strong></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git clone https://github.com/username/blog.git</pre></td></tr></table>
+</div>
+</div>
+<p>其中<code>username</code>替换为自己注册时的username，<code>blog</code>替换为自己创建的第一个仓库名称。</p>
+
+<h3 id="合并"><strong>合并</strong></h3>
+
+<p>将本地已有的博客项目目录中所有文件拷贝到clone下来的项目中。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">已有博客项目名：myblog
+clone项目名：blog
+cp -r myblog/* blog/</pre></td></tr></table>
+</div>
+</div>
+<h3 id="重新添加theme"><strong>重新添加theme</strong></h3>
+
+<p>进入项目根目录，删除之前已添加的theme，使用如下命令重新将主题作为submodule添加。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">rm -rf themes/主题名
+git submodule add https://主题地址 themes/主题名</pre></td></tr></table>
+</div>
+</div>
+<p>第一步是删除已添加过的主题，将主题名替换为已添加的主题名。<br />
+第二步是重新添加主题作为submodule，将主题地址和主题名分别替换为要添加主题的地址和名称。</p>
+
+<h3 id="配置主题"><strong>配置主题</strong></h3>
+
+<p>具体配置方式见<a href="https://super-geeker.github.io/post/termux-build-hugo-1">上一篇</a>。<br />
+另外，还需修改项目根目录config.toml文件中baseurl属性，将值替换为<code>username.github.io</code>，<code>username</code>仍是注册时username。</p>
+
+<h3 id="测试运行"><strong>测试运行</strong></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">hugo server</pre></td></tr></table>
+</div>
+</div>
+<p>测试开启服务器后浏览器是否能够正常显示。</p>
+
+<h3 id="生成public目录"><strong>生成public目录</strong></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">hugo</pre></td></tr></table>
+</div>
+</div>
+<p>执行hugo server并不会生成public目录。这里需要执行<code>hugo</code>命令。在执行hugo之前，已有博客中的draft属性需要设置为false或删除该属性。<br />
+<code>public</code>即为我们要部署的目录。</p>
+
+<h3 id="部署public"><strong>部署public</strong></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cd public
+git init
+git add .
+git commit -m &#34;first commit&#34;
+git remote add origin https://github.com/username/username.github.io.git
+git push -u origin master</pre></td></tr></table>
+</div>
+</div>
+<p><code>git init</code>只需第一次执行,用于初始化为一个git管理的项目。<br />
+<code>git commit</code>后面双引号中是自定义的提交信息。<br />
+<code>git remote</code>中的<code>username</code>替换为注册时的username。<br />
+最后一句只有第一次push需要加<code>-u</code>参数。<br />
+根据提示输入GitHub的用户名和密码即可。</p>
+
+<h3 id="public作为submodule"><strong>public作为submodule</strong></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">cd ..
+rm -rf public
+git submodule add https://github.com/username/username.github.io.git public</pre></td></tr></table>
+</div>
+</div>
+<p>回到项目根目录，删除已生成的public目录。<br />
+将刚部署到线上的项目作为submodule重新添加，<code>username</code>替换为注册的username。</p>
+
+<h3 id="添加脚本"><strong>添加脚本</strong></h3>
+
+<ul>
+<li><p><strong>新建deploy.sh</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">vim deploy.sh</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p><strong>编辑内容</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"><span class="cp">#!/bin/sh
+</span><span class="cp"></span>  
+<span class="nb">set</span> -e
+  
+<span class="nb">printf</span> <span class="s2">&#34;\033[0;32mDeploying updates to Github...\033[0m\n&#34;</span>
+  
+hugo
+  
+<span class="nb">cd</span> public
+  
+git add .
+  
+<span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;rebuilding site </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&#34;</span>
+<span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="nv">$*</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+	<span class="nv">msg</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$*</span><span class="s2">&#34;</span>
+<span class="k">fi</span>
+  
+git commit -m <span class="s2">&#34;</span><span class="nv">$msg</span><span class="s2">&#34;</span>
+  
+git push origin master</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p><strong>保存退出</strong></p></li>
+
+<li><p><strong>赋予可执行权限</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">chmod +x deploy.sh</pre></td></tr></table>
+</div>
+</div>
+<p>之后部署public目录，只需在项目根目录执行<code>./deploy.sh &quot;提交信息&quot;</code>即可。</p></li>
+</ul>
+
+<h3 id="提交整个博客项目"><strong>提交整个博客项目</strong></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">git add .
+git commit -m &#34;first commit&#34;
+git push origin master</pre></td></tr></table>
+</div>
+</div>
+<p>因为我们的博客项目是clone下来的，所以<code>commit</code>之后只需执行<code>push</code>即可。<br />
+这里也可根据需要将整个博客项目的提交加入脚本一同或分开管理。</p>
+
+<h2 id="小结"><strong>小结</strong></h2>
+
+<p>至此，博客完整的部署及管理流程就完成了。之后的维护可分为如下几个步骤：</p>
+
+<ul>
+<li><p><strong>编写博客</strong></p></li>
+
+<li><p><strong>本地调试，执行<code>hugo server</code></strong></p></li>
+
+<li><p><strong>生成public，执行<code>hugo</code></strong></p></li>
+
+<li><p><strong>执行脚本，执行<code>./deploy.sh &quot;提交信息&quot;</code></strong></p></li>
+
+<li><p><strong>提交整个博客项目</strong></p></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Geeker</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-07-30
+        
+    </span>
+  </p>
+  
+  
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin.png">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay.jpg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/hugo/">hugo</a>
+          <a href="/tags/termux/">termux</a>
+          <a href="/tags/blog/">blog</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/termux-build-hugo-1/">
+            <span class="next-text nav-default">Hugo搭建个人博客 (一)</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="https://super-geeker.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Geeker</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
